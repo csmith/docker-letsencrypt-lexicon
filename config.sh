@@ -3,7 +3,7 @@
 BASEDIR=/letsencrypt
 CONTACT_EMAIL="$EMAIL"
 
-if [[ -z "${STAGING}" ]]; then
+if [[ -z "${STAGING:-}" ]]; then
   CA="https://acme-staging.api.letsencrypt.org/directory"
 else
   CA="https://acme-v01.api.letsencrypt.org/directory"
