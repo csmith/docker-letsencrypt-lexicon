@@ -8,8 +8,8 @@ RUN apt-get update \
       python-pip
 
 RUN pip install \
-      dns-lexicon==1.1.4
+      dns-lexicon==1.1.9
 
-ADD https://raw.githubusercontent.com/AnalogJ/lexicon/v1.1.4/examples/letsencrypt.default.sh /dns/hook
+ADD https://raw.githubusercontent.com/AnalogJ/lexicon/v1.1.9/examples/letsencrypt.default.sh /dns/hook
 RUN chmod +x /dns/hook
 
