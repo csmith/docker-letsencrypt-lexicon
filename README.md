@@ -10,6 +10,17 @@ are added.
 
 ## Usage
 
+### Accepting Let's Encrypt's terms
+
+In order to issue certificates with Let's Encrypt, you must agree to the
+Let's Encrypt terms of service. You can do this by running the command
+`/dehydrated --register --accept-terms` from within the container.
+
+For ease of automation, you can define the `ACCEPT_CA_TERMS` env var
+(with any non-empty value) to automatically accept the terms. Be warned
+that doing so will automatically accept any future changes to the terms
+of service.
+
 ### Defining domains
 
 The container defines one volume at `/letsencrypt`, and expects there to be
