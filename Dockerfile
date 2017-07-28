@@ -1,15 +1,15 @@
 FROM csmith/letsencrypt-generic:latest
-MAINTAINER Chris Smith <chris87@gmail.com> 
+MAINTAINER Chris Smith <dke@chameth.com> 
 
 RUN apt-get update \
  && apt-get install -y \
       inotify-tools \
-      python2.7 \
-      python-pip
+      python3 \
+      python3-pip
 
-RUN pip install \
-      dns-lexicon==1.1.9
+RUN pip3 install \
+      dns-lexicon==2.1.10
 
-ADD https://raw.githubusercontent.com/AnalogJ/lexicon/v1.1.9/examples/letsencrypt.default.sh /dns/hook
+ADD hook.sh /dns/hook
 RUN chmod +x /dns/hook
 
