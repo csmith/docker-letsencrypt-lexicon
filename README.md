@@ -1,7 +1,7 @@
 # Let's Encrypt Lexicon Service
 
 This container uses the awesome [Lexicon](https://github.com/AnalogJ/lexicon)
-library with [letsencrypt.sh](https://github.com/lukas2511/letsencrypt.sh) to
+library with [dehydrated](https://github.com/dehydrated-io/dehydrated/) to
 automatically obtain SSL certs from [Let's Encrypt](https://letsencrypt.org/).
 
 Multiple domains, as well as SANs, are supported. Certificates will be
@@ -37,6 +37,16 @@ admin.example.com
 
 This will request two certificates: one for example.com with a SAN of
 www.example.com, and a separate one for admin.example.com.
+
+To obtain a wildcard certificate you must alias the domain:
+
+```
+*.example.com > star_example_com
+```
+
+This will request the wildcard certificate and store it under
+`star_example_com`. For more information see
+[Dehydrated's docs](https://github.com/dehydrated-io/dehydrated/blob/master/docs/examples/domains.txt).
 
 The container uses inotify to monitor the domains.txt file for changes,
 so you can update it while the container is running and changes will be
